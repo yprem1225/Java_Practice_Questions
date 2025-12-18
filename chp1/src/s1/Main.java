@@ -31,6 +31,7 @@ public class Main {
 		Emp emp = new Emp(1, "prem", "mumba", 1110);
 		emp.displayInfo();
 		System.out.println(emp);
+		System.out.println("Prem");
 	}
 	
 
