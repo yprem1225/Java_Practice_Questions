@@ -1,5 +1,6 @@
+
 package queue;
-//Queue Interface
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,6 +18,7 @@ public class Main {
 		System.out.println(queue.element());
 		queue.remove();
 		System.out.println(queue);
+		System.out.println(queue.poll());
 	}
 
 }
