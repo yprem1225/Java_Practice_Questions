@@ -1,5 +1,5 @@
 package queue;
-
+//Queue Interface
 import java.util.LinkedList;
 import java.util.Queue;
 
