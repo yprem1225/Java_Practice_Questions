@@ -67,6 +67,7 @@ public class Main {
 		while (iterator2.hasNext()) {
 			Emp emp5 = (Emp) iterator2.next();
 			System.out.println(emp5);
+			System.out.println("kkf");
 			
 		}
 	}
