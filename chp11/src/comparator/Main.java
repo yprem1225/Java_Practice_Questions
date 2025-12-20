@@ -68,6 +68,7 @@ public class Main {
 			Emp emp5 = (Emp) iterator2.next();
 			System.out.println(emp5);
 			System.out.println("kkf");
+			//
 			
 		}
 	}
