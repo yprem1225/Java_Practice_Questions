@@ -19,7 +19,7 @@ public class Main {
 		 //Find the smallest number and print in ascending order
 		while (!pq.isEmpty()) {
 			System.out.println(pq.poll());
-			
+			//
 		}
 	}
 	
