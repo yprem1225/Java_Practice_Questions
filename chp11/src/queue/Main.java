@@ -24,16 +24,16 @@ public class Main {
 		
 		Iterator<String> it = queue.iterator();
 		//Print queue in order using iterator
-//		while (it.hasNext()) {
-//			String name=  it.next();
-//			System.out.println(name);
-//			
-//		}
-//		// Print queue in order using foreach loop
-//		for (String name : queue) {
-//			System.out.println(name);
-//			
-//		}
+		while (it.hasNext()) {
+			String name=  it.next();
+			System.out.println(name);
+			
+		}
+		// Print queue in order using for each loop
+		for (String name : queue) {
+			System.out.println(name);
+			
+		}
 		
 		//Print in reverse order
 		Stack<String> stack = new Stack<String>(); //Move queue -> stack
