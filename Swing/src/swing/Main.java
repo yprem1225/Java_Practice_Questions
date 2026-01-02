@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
@@ -33,12 +34,17 @@ public class Main extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
-					String idtext=field1.getText().trim();
-					String name=field2.getText().trim();
-					
-					int id = Integer.parseInt(idtext);
-					
+				String idtext=field1.getText().trim();
+				String name=field2.getText().trim();
+				
+				if(name.isEmpty()||idtext.isEmpty()) {
+					System.out.println("Please enter id and password...");
+					JOptionPane.showMessageDialog(rootPane, e);
+					return;
+				}
+				
+				int id = Integer.parseInt(idtext);
+				try {					
 					PreparedStatement ps = GetConnection.getConnection().prepareStatement("select * from emp where id=? and name=?");
 					ps.setInt(1, id);
 					ps.setString(2, name);
