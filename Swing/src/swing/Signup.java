@@ -4,23 +4,23 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
-public class Main extends JFrame{
-	
+public class Signup extends JFrame{
 	JLabel label1,label2;
 	JTextField field1,field2;
 	JButton button1, button2;
 	
-	public Main() {
-	setLayout(new FlowLayout());
+	public Signup() {
+		
+		setLayout(new FlowLayout());
 		
 		label1=new JLabel("Username");
 		label2=new JLabel("Password");
@@ -38,19 +38,21 @@ public class Main extends JFrame{
 				
 				if(username.isEmpty()||password.isEmpty()) {
 					System.out.println("Please enter username and password...");
+					JOptionPane.showMessageDialog(rootPane, e);
 					return;
 				}
 				
-				try {					
-					PreparedStatement ps = GetConnection.getConnection().prepareStatement("select * from  users where username=?");
-					ps.setString(1, username);
-					ResultSet rs= ps.executeQuery();
+				try {
+					PreparedStatement preparedStatement = GetConnection.getConnection().prepareStatement("insert into users (username,password) values (?,?)");
+					preparedStatement.setString(1, username);
+					preparedStatement.setString(2, password);
 					
-					if(rs.next()&& (rs.getString(2).equals(password))) {
-						System.out.println("Login sucessfull...");
-					}else {
-						System.out.println("error");
+					int add=preparedStatement.executeUpdate();
+					if(add>0) {
+						System.out.println("Data Inserted SuccesFully...");
 					}
+
+					
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -70,11 +72,9 @@ public class Main extends JFrame{
 		
 		setSize(300,300);
 		setVisible(true);
+		
 	}
-	
 	public static void main(String[] args) {
-		new Main();
+		new Signup();
 	}
-	
-
 }
