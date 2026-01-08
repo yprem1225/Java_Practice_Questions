@@ -22,10 +22,10 @@ public class Main {
 //		operationsImpementor.show();
 		operationsImpementor.show();
 		
-		operationsImpementor.update(3, "neha", "mba");
-		operationsImpementor.show();
-		
-		operationsImpementor.reverse();
+//		operationsImpementor.update(3, "neha", "mba");
+//		operationsImpementor.show();
+//		
+//		operationsImpementor.reverse();
 	}
 	
 	
