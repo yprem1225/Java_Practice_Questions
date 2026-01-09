@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 
 public class Main {
-	public static void main(String[] args) {
-		
+	public static void main(String[] args)
+	{	
 		Emp emp = new Emp(1, "Prem", 1000);
 		Emp emp2 = new Emp(2, "yash", 1000);
 		Emp emp3 = new Emp(3, "ahh",890);
