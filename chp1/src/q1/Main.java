@@ -1,4 +1,4 @@
-package s1;
+package q1;
 
 class Emp{
 	int id;
